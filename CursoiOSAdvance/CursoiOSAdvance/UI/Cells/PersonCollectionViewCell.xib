@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="ArO-ZN-tD3" customClass="PersonCollectionViewCell" customModule="CursoiOSAdvance" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="164" height="164"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="dsZ-u9-RJY">
+                <rect key="frame" x="0.0" y="0.0" width="164" height="164"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Oje-ij-1rl">
+                        <rect key="frame" x="8" y="8" width="148" height="148"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="OCO-6e-azM">
+                                <rect key="frame" x="0.0" y="0.0" width="148" height="148"/>
+                            </imageView>
+                            <view alpha="0.40000000596046448" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6kO-Fs-f7T">
+                                <rect key="frame" x="0.0" y="98" width="148" height="50"/>
+                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="oAY-ub-S1x"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kja-Md-KmS">
+                                <rect key="frame" x="8" y="106" width="132" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="34" id="XJ4-i1-goO"/>
+                                    <constraint firstAttribute="height" constant="34" id="YPc-NV-86t"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="21"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="OCO-6e-azM" firstAttribute="leading" secondItem="Oje-ij-1rl" secondAttribute="leading" id="4Ao-NS-XIX"/>
+                            <constraint firstAttribute="bottom" secondItem="6kO-Fs-f7T" secondAttribute="bottom" id="CBi-hc-rLd"/>
+                            <constraint firstAttribute="trailing" secondItem="kja-Md-KmS" secondAttribute="trailing" constant="8" id="FMt-fT-XBf"/>
+                            <constraint firstItem="kja-Md-KmS" firstAttribute="leading" secondItem="Oje-ij-1rl" secondAttribute="leading" constant="8" id="MNq-Oe-1Hz"/>
+                            <constraint firstAttribute="trailing" secondItem="6kO-Fs-f7T" secondAttribute="trailing" id="R1T-Wx-B98"/>
+                            <constraint firstItem="6kO-Fs-f7T" firstAttribute="leading" secondItem="Oje-ij-1rl" secondAttribute="leading" id="UA5-1l-u5V"/>
+                            <constraint firstAttribute="bottom" secondItem="kja-Md-KmS" secondAttribute="bottom" constant="8" id="aCo-qo-hdN"/>
+                            <constraint firstItem="OCO-6e-azM" firstAttribute="top" secondItem="Oje-ij-1rl" secondAttribute="top" id="eOa-EU-INC"/>
+                            <constraint firstAttribute="bottom" secondItem="OCO-6e-azM" secondAttribute="bottom" id="hyh-Ga-k6P"/>
+                            <constraint firstAttribute="trailing" secondItem="OCO-6e-azM" secondAttribute="trailing" id="onW-vS-gJ7"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="Oje-ij-1rl" secondAttribute="bottom" constant="8" id="0I6-fU-sOZ"/>
+                    <constraint firstItem="Oje-ij-1rl" firstAttribute="leading" secondItem="dsZ-u9-RJY" secondAttribute="leading" constant="8" id="26C-Gk-poz"/>
+                    <constraint firstItem="Oje-ij-1rl" firstAttribute="top" secondItem="dsZ-u9-RJY" secondAttribute="top" constant="8" id="msm-B7-gEj"/>
+                    <constraint firstAttribute="trailing" secondItem="Oje-ij-1rl" secondAttribute="trailing" constant="8" id="yzr-z4-3jY"/>
+                </constraints>
+            </collectionViewCellContentView>
+            <size key="customSize" width="164" height="164"/>
+            <connections>
+                <outlet property="mImage" destination="OCO-6e-azM" id="XS0-9t-FS6"/>
+                <outlet property="mLabelName" destination="kja-Md-KmS" id="mxA-eD-dTI"/>
+                <outlet property="mView" destination="dsZ-u9-RJY" id="HGq-Kc-XWN"/>
+                <outlet property="mViewFooter" destination="6kO-Fs-f7T" id="c8G-MA-f1s"/>
+            </connections>
+            <point key="canvasLocation" x="390" y="154"/>
+        </collectionViewCell>
+    </objects>
+</document>
