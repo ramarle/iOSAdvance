@@ -23,6 +23,7 @@
 		D9228AED2347C72200FF3F3B /* LoginDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9228AEC2347C72200FF3F3B /* LoginDTO.swift */; };
 		D9228AEF2347C79C00FF3F3B /* RegisteredDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9228AEE2347C79C00FF3F3B /* RegisteredDTO.swift */; };
 		D9228AF12347C80900FF3F3B /* PictureDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9228AF02347C80900FF3F3B /* PictureDTO.swift */; };
+		D9228AF32347CC8900FF3F3B /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9228AF22347CC8900FF3F3B /* DataManager.swift */; };
 		D92A864D23464B26003F8361 /* Splash.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D92A864C23464B26003F8361 /* Splash.storyboard */; };
 		D92A864F23465120003F8361 /* UsersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D92A864E23465120003F8361 /* UsersViewController.swift */; };
 		D92A8653234662AF003F8361 /* PersonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D92A8651234662AF003F8361 /* PersonTableViewCell.swift */; };
@@ -57,6 +58,7 @@
 		D9228AEC2347C72200FF3F3B /* LoginDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginDTO.swift; sourceTree = "<group>"; };
 		D9228AEE2347C79C00FF3F3B /* RegisteredDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisteredDTO.swift; sourceTree = "<group>"; };
 		D9228AF02347C80900FF3F3B /* PictureDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureDTO.swift; sourceTree = "<group>"; };
+		D9228AF22347CC8900FF3F3B /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		D92A864C23464B26003F8361 /* Splash.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Splash.storyboard; sourceTree = "<group>"; };
 		D92A864E23465120003F8361 /* UsersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersViewController.swift; sourceTree = "<group>"; };
 		D92A8651234662AF003F8361 /* PersonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonTableViewCell.swift; sourceTree = "<group>"; };
@@ -170,6 +172,7 @@
 			children = (
 				D9228AD82347BEDA00FF3F3B /* Remote */,
 				D9228AD42347B65400FF3F3B /* Local */,
+				D9228AF22347CC8900FF3F3B /* DataManager.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -383,6 +386,7 @@
 				D9228AE72347C5C000FF3F3B /* CoordinatesDTO.swift in Sources */,
 				D9228AED2347C72200FF3F3B /* LoginDTO.swift in Sources */,
 				D9228AD72347B68C00FF3F3B /* UserDAO.swift in Sources */,
+				D9228AF32347CC8900FF3F3B /* DataManager.swift in Sources */,
 				D9228AF12347C80900FF3F3B /* PictureDTO.swift in Sources */,
 				D9228ADB2347BEF700FF3F3B /* UsersDTO.swift in Sources */,
 				D9228AE52347C58A00FF3F3B /* StreetDTO.swift in Sources */,
