@@ -22,6 +22,7 @@ class SplashViewController: UIViewController {
         
     }
     
+    //Función para colocar la animación
     func playAnimation(){
         let starAnimationView = AnimationView(name: "animation1")
         
@@ -33,6 +34,7 @@ class SplashViewController: UIViewController {
         starAnimationView.play()
     }
     
+    //Función para navegar después de 3s
     private func navigate(){
         DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
             let storyBorard = UIStoryboard(name: "Main", bundle: nil)
