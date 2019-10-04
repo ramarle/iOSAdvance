@@ -13,6 +13,7 @@ class UsersViewController: UIViewController {
     // MARK: - IBOutlets
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var segmentOption: UISegmentedControl!
     
     //Nos sirve para configurar las columnas de las vista
     private var cellSpacing: CGFloat = 16.0

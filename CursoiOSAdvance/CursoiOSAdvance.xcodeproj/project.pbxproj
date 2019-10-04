@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		3F550BE4D254C5247915255C /* Pods_CursoiOSAdvance.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B715EE0640F0D7CD34B11236 /* Pods_CursoiOSAdvance.framework */; };
+		D9228AD12347952500FF3F3B /* animation1.json in Resources */ = {isa = PBXBuildFile; fileRef = D9228AD02347952400FF3F3B /* animation1.json */; };
+		D9228AD323479B9100FF3F3B /* animation2.json in Resources */ = {isa = PBXBuildFile; fileRef = D9228AD223479B9100FF3F3B /* animation2.json */; };
 		D92A864D23464B26003F8361 /* Splash.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D92A864C23464B26003F8361 /* Splash.storyboard */; };
 		D92A864F23465120003F8361 /* UsersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D92A864E23465120003F8361 /* UsersViewController.swift */; };
 		D92A8653234662AF003F8361 /* PersonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D92A8651234662AF003F8361 /* PersonTableViewCell.swift */; };
@@ -27,6 +29,8 @@
 		A723BC7ED2E35F8C6C8A0DF4 /* Pods-CursoiOSAdvance.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CursoiOSAdvance.debug.xcconfig"; path = "Target Support Files/Pods-CursoiOSAdvance/Pods-CursoiOSAdvance.debug.xcconfig"; sourceTree = "<group>"; };
 		AB7D2B8E4221902C901B444F /* Pods-CursoiOSAdvance.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CursoiOSAdvance.release.xcconfig"; path = "Target Support Files/Pods-CursoiOSAdvance/Pods-CursoiOSAdvance.release.xcconfig"; sourceTree = "<group>"; };
 		B715EE0640F0D7CD34B11236 /* Pods_CursoiOSAdvance.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CursoiOSAdvance.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D9228AD02347952400FF3F3B /* animation1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = animation1.json; sourceTree = "<group>"; };
+		D9228AD223479B9100FF3F3B /* animation2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = animation2.json; sourceTree = "<group>"; };
 		D92A864C23464B26003F8361 /* Splash.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Splash.storyboard; sourceTree = "<group>"; };
 		D92A864E23465120003F8361 /* UsersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersViewController.swift; sourceTree = "<group>"; };
 		D92A8651234662AF003F8361 /* PersonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonTableViewCell.swift; sourceTree = "<group>"; };
@@ -85,6 +89,8 @@
 		D92A86472346446D003F8361 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				D9228AD223479B9100FF3F3B /* animation2.json */,
+				D9228AD02347952400FF3F3B /* animation1.json */,
 				D9E5E3E3234523EA003D01B0 /* Assets.xcassets */,
 			);
 			path = Resources;
@@ -237,10 +243,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				D9E5E3E7234523EA003D01B0 /* LaunchScreen.storyboard in Resources */,
+				D9228AD323479B9100FF3F3B /* animation2.json in Resources */,
 				D92A865823466414003F8361 /* PersonCollectionViewCell.xib in Resources */,
 				D92A8654234662AF003F8361 /* PersonTableViewCell.xib in Resources */,
 				D9E5E3E4234523EA003D01B0 /* Assets.xcassets in Resources */,
 				D9E5E3E2234523E6003D01B0 /* Main.storyboard in Resources */,
+				D9228AD12347952500FF3F3B /* animation1.json in Resources */,
 				D92A864D23464B26003F8361 /* Splash.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -7,13 +7,33 @@
 //
 
 import UIKit
+import Lottie
 
 class SplashViewController: UIViewController {
+    
+    @IBOutlet weak var mView: UIView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        // Do any additional setup after loading the view
         
+        playAnimation()
+        navigate()
+        
+    }
+    
+    func playAnimation(){
+        let starAnimationView = AnimationView(name: "animation1")
+        
+        starAnimationView.contentMode = .scaleAspectFit
+        starAnimationView.loopMode = .loop
+        starAnimationView.frame = mView.bounds
+        mView.addSubview(starAnimationView)
+        
+        starAnimationView.play()
+    }
+    
+    private func navigate(){
         DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
             let storyBorard = UIStoryboard(name: "Main", bundle: nil)
             guard let viewControllerDestination = storyBorard.instantiateInitialViewController() else {

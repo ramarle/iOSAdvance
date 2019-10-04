@@ -22,24 +22,26 @@
                                 </constraints>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eSe-Ld-swh">
-                                <rect key="frame" x="80" y="463" width="254" height="254"/>
-                                <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <rect key="frame" x="20" y="403" width="374" height="350"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="254" id="rkS-sP-T4A"/>
+                                    <constraint firstAttribute="height" constant="350" id="rkS-sP-T4A"/>
                                 </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="eSe-Ld-swh" firstAttribute="leading" secondItem="IW3-zW-sn6" secondAttribute="leading" constant="80" id="5Tf-kt-XZI"/>
+                            <constraint firstItem="eSe-Ld-swh" firstAttribute="leading" secondItem="IW3-zW-sn6" secondAttribute="leading" constant="20" id="5Tf-kt-XZI"/>
                             <constraint firstItem="IW3-zW-sn6" firstAttribute="trailing" secondItem="gJL-la-npv" secondAttribute="trailing" constant="80" id="GgZ-QI-d20"/>
-                            <constraint firstItem="IW3-zW-sn6" firstAttribute="trailing" secondItem="eSe-Ld-swh" secondAttribute="trailing" constant="80" id="L1j-mJ-215"/>
+                            <constraint firstItem="IW3-zW-sn6" firstAttribute="trailing" secondItem="eSe-Ld-swh" secondAttribute="trailing" constant="20" id="L1j-mJ-215"/>
                             <constraint firstItem="gJL-la-npv" firstAttribute="top" secondItem="IW3-zW-sn6" secondAttribute="top" constant="85" id="ODC-9I-7CX"/>
                             <constraint firstItem="gJL-la-npv" firstAttribute="leading" secondItem="IW3-zW-sn6" secondAttribute="leading" constant="80" id="XVe-yR-Ag7"/>
-                            <constraint firstItem="eSe-Ld-swh" firstAttribute="top" secondItem="gJL-la-npv" secondAttribute="bottom" constant="80" id="pU5-A4-dNZ"/>
+                            <constraint firstItem="eSe-Ld-swh" firstAttribute="top" secondItem="gJL-la-npv" secondAttribute="bottom" constant="20" id="pU5-A4-dNZ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="IW3-zW-sn6"/>
                     </view>
+                    <connections>
+                        <outlet property="mView" destination="eSe-Ld-swh" id="dQg-Ex-EuT"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="snd-ki-pLf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
