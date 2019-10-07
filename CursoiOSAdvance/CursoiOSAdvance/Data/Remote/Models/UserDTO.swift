@@ -14,6 +14,7 @@ struct UserDTO: Codable {
     let location: LocationDTO?
     let email: String?
     let login: LoginDTO?
+    let coordinates: CoordinatesDTO?
     let dob: DobDTO?
     let registered: RegisteredDTO?
     let phone: String?

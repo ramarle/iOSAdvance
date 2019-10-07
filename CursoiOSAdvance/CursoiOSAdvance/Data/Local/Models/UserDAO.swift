@@ -8,7 +8,7 @@
 import Foundation
 import RealmSwift
 
-class userDAO: Object {
+class UserDAO: Object {
     
     @objc dynamic var uuid:String = ""
     @objc dynamic var gender: String?
@@ -23,6 +23,23 @@ class userDAO: Object {
     
     override static func primaryKey() -> String {
         return "uuid"
+    }
+    
+    convenience init(uuid: String, avatar: String? = nil, firstname: String? = nil, lastname: String? = nil, gender: String? = nil, country: String? = nil, latitude: String? = nil, longitude: String? = nil, email: String? = nil, birthdate: Date? = nil){
+        
+        self.init()
+        
+        self.uuid = uuid
+        self.avatar = avatar
+        self.firstname = firstname
+        self.lastname = lastname
+        self.gender = gender
+        self.country = country
+        self.latitude = latitude
+        self.longitude = longitude
+        self.email = email
+        self.birthdate = birthdate
+        
     }
     
 }

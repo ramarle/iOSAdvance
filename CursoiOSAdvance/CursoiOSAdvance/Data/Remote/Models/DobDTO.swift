@@ -9,6 +9,6 @@
 import Foundation
 
 struct DobDTO: Codable {
-    let date: String?
+    let date: Date?
     let age: Int?
 }
