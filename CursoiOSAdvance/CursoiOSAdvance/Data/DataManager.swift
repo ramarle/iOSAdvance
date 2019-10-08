@@ -16,53 +16,94 @@ class DataManager {
         
     }
     
-    func users(completion: ServiceCompletion) {
+    func users(completion: @escaping ServiceCompletion) {
         
-        let users = usersDB()
-        if users.count > 0{
-            //
-            completion(.success(data: users))
-        } else {
-            usersForceUpdate(completion: completion)
-        }
-    }
-    
-    func usersForceUpdate(completion: ServiceCompletion) {
-        
-        //Llamar al servico para obtener nuevos users
-        ApiManager.shared.fetchUsers() { result in
-            
-            switch result {
-                
-                case.success(let data):
-                    
-                    guard let users = data as? UsersDTO else {
-                        completion(.failure(msg: "Error genérico"))
-                        return
-                    }
-                    
-                    DatabaseManager.shared.deleteAll()
-                    save(users: users)
+        DispatchQueue.global(qos: .background).async { [weak self] in
+            if let users = self?.usersDB(), users.count > 0{
+                //
+                DispatchQueue.main.async {
                     completion(.success(data: users))
-                    break
-                    
-                case.failure(let msg):
-                    print ("Fallo al obtener usuarios del servicio: \(msg)")
-                    completion(.failure(msg: msg))
-                    break
+                }
+                
+            } else {
+                self?.usersForceUpdate(completion: completion)
             }
-            
         }
         
     }
     
-    func user(id:String) -> UserDAO?{
-        return DatabaseManager.shared.user(by: id)
+    //Con @escaping almacenamos el parámetro en memoria aunque la funcion termine ya que los necesitamos para el clousure
+    func usersForceUpdate(completion: @escaping ServiceCompletion) {
+        
+        //Creamos un hilo en background
+        DispatchQueue.global(qos: .background).async {
+            //weak self nos permite gestionar la memoria
+            ApiManager.shared.fetchUsers() { [weak self] result in
+                switch result {
+                    case.success(let data):
+                        guard let usersDTO = data as? UsersDTO else {
+                            DispatchQueue.main.async {
+                                completion(.failure(msg: "Error genérico"))
+                            }
+                            
+                            return
+                        }
+                        
+                        DatabaseManager.shared.deleteAll()
+                        self?.save(users: usersDTO)
+                        
+                        let users = usersDTO.users?.compactMap{ userDTO in
+                            self?.fromUserDTOToUser(userDTO: userDTO)
+                        }
+                        
+                        DispatchQueue.main.async {
+                            completion(.success(data: users))
+                        }
+                        
+
+                    case.failure(let msg):
+                        print ("Fallo al obtener usuarios del servicio: \(msg)")
+                        
+                        DispatchQueue.main.async {
+                            completion(.failure(msg: msg))
+
+                        }
+                }
+            }
+        }
     }
     
-    private func usersDB() -> Array<UserDAO>{
+    func user(id:String, completion: @escaping ServiceCompletion){
         
-        return Array(DatabaseManager.shared.users())
+        DispatchQueue.global(qos: .background).async { [weak self] in
+            
+            if let userDAO = DatabaseManager.shared.user(by: id) {
+                
+                let user = self!.fromUserDAOToUser(userDAO: userDAO)
+                DispatchQueue.main.async {
+                    completion(.success(data: user))
+                }
+                
+            } else {
+                
+                DispatchQueue.main.async {
+                    completion(.failure(msg: "No se ha encontrado el usuario"))
+                }
+                
+            }
+        }
+    }
+    
+    private func usersDB() -> Array<User>{
+        
+        var users = Array<User>()
+        
+        DatabaseManager.shared.users().forEach { userDAO in
+            
+            users.append(fromUserDAOToUser(userDAO: userDAO))
+        }
+        
+        return users
     }
     
     private func save(users: UsersDTO){
@@ -82,5 +123,25 @@ class DataManager {
         let userDB = UserDAO(uuid: userId, avatar: user.picture?.large, firstname: user.name?.first, lastname: user.name?.last, gender: user.gender, country: user.location?.country, latitude: user.coordinates?.latitude, longitude: user.coordinates?.longitude, email: user.email, birthdate: user.dob?.date)
         
         DatabaseManager.shared.save(user: userDB)
+    }
+    
+    private func fromUserDAOToUser(userDAO: UserDAO) -> User{
+        
+        return User(id: userDAO.uuid, avatar: userDAO.avatar, firstname: userDAO.firstname, lastname: userDAO.lastname, email: userDAO.email, country: userDAO.country, birthdate: userDAO.birthdate, nationality: nil)
+        
+    }
+    
+    private func fromUserDTOToUser(userDTO: UserDTO) -> User{
+        
+        if let uuid = userDTO.login?.uuid {
+            
+            return User(id: uuid, avatar: userDTO.picture?.large, firstname: userDTO.name?.first, lastname: userDTO.name?.last, email: userDTO.email, country: userDTO.location?.country, birthdate: userDTO.dob?.date, nationality: userDTO.location?.country)
+            
+        } else {
+            
+            return User(id: "0")
+            
+        }
+        
     }
 }
